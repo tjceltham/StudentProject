@@ -32,7 +32,7 @@ namespace StudentProject
             Grade t= new Grade(sub, grade);
             l.Add(t);
             added = true;
-           
+           /* Sorting by subject
             l.Sort(delegate (Grade x, Grade y)
             {
                 if (x.getSubject() == null && y.getSubject() == null) return 0;
@@ -40,6 +40,16 @@ namespace StudentProject
                 else if (y.getSubject() == null) return 1;
                 else return x.getSubject().CompareTo(y.getSubject());
             });
+           */
+           //Sorting by grade
+            l.Sort(delegate (Grade x, Grade y)
+            {
+                if (x.getGrade() == null && y.getGrade() == null) return 0;
+                else if (x.getGrade() == null) return -1;
+                else if (y.getGrade() == null) return 1;
+                else return x.getGrade().CompareTo(y.getGrade());
+            });
+
             return added;
         }
 
